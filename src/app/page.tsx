@@ -1,57 +1,101 @@
+'use client'
+
 import React from 'react';
-import  Image  from 'next/image';
+import Image from 'next/image';
+import { FaEnvelope, FaCopy, FaCheck, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { useState } from 'react';
 
 const HomePage = () => {
+
+  const email = "hola@markelramiro.com";
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000); // Reset icon after 2 seconds
+  };
+
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-slate-50 text-gray-800">
       {/* Primera Sección Visual */}
-      <section className="relative w-full flex flex-col items-center justify-center py-48 bg-slate-50 text-gray-800">
+      <section className="relative w-full flex flex-col items-center justify-center py-12 px-4 text-gray-800 md:pb-48">
         {/* Círculo 1 */}
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-emerald-50 rounded-full mix-blend-multiply blur-2xl transform -translate-y-1/2 animate-move-slower md:w-96 md:h-96"></div>
+        <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-emerald-50 rounded-full mix-blend-multiply blur-xl transform -translate-y-1/2 animate-move-slower md:w-64 md:h-64 lg:w-96 lg:h-96"></div>
         {/* Círculo 2 */}
-        <div className="absolute top-1/2 left-2/3 w-64 h-64 bg-lime-50 rounded-full mix-blend-multiply blur-2xl transform -translate-y-1/2 animate-move md:w-96 md:h-96"></div>
+        <div className="absolute top-1/2 left-2/3 w-32 h-32 bg-lime-50 rounded-full mix-blend-multiply blur-2xl transform -translate-y-1/2 animate-move md:w-64 md:h-64 lg:w-96 lg:h-96"></div>
         {/* Contenido */}
-        <h1 className="text-6xl font-bold mb-4 relative z-10">Markel Ramiro</h1>
-        <p className="text-2xl text-center max-w-2xl relative z-10">
-          A showcase of my projects and skills in Big Data, Backend Development, and Cloud Infrastructure.
+        <img
+          src="/perfil.JPG"
+          alt="Avatar"
+          className="relative z-10 w-24 h-24 rounded-full mb-4 md:w-32 md:h-32"
+        />
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 relative z-10">Markel Ramiro</h1>
+        <p className="text-lg md:text-2xl text-center max-w-2xl relative z-10">
+          Driven by Big Data, Backend Development and Cloud Solutions | Entrepreneur.
         </p>
+        {/* Sección de Contacto */}
+        <div className="flex items-center space-x-4 mt-12 relative z-10 bg-gray-200/40 p-2 rounded-lg">
+          <p className="text-lg md:text-xl text-gray-700">{email}</p>
+          <a href={`mailto:${email}`} className="text-slate-400 hover:text-slate-500">
+            <FaEnvelope size={24} />
+          </a>
+          <button onClick={handleCopyEmail} className="text-slate-400 hover:text-slate-500">
+            {copied ? <FaCheck size={24} /> : <FaCopy size={24} />}
+          </button>
+        </div>
+        <div className="flex space-x-8 mt-8 relative z-10">
+            <a href="https://github.com/Riemann-def" className="text-slate-900 hover:text-slate-800">
+              <FaGithub size={52} />
+            </a>
+            <a href="https://www.linkedin.com/in/markel-ramiro-vaquero-92530319b/" className="text-blue-400 hover:text-blue-300">
+              <FaLinkedin size={52} />
+            </a>
+          </div>
+        
+        {/* Flecha de Scroll, solo en pantallas grandes */}
+        <div className="hidden md:block absolute bottom-8 animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
       </section>
 
       {/* Sección de Proyectos */}
-      <section className="w-full py-24 px-8 bg-slate-50">
+      <section className="w-full py-24 px-4 md:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-gray-800">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Proyecto 1 */}
-            <div className="bg-slate-200 p-6 rounded-lg shadow-lg">
-              <Image src="/wippass.PNG" alt="Wippass Image" className="w-full h-64 object-cover rounded-t-lg" />
-              <h3 className="text-3xl font-semibold my-4 text-gray-900">Wippass</h3>
-              <p className="text-lg mb-4 text-gray-800">
+            <div className="bg-slate-100 p-6 rounded-lg shadow-lg">
+              <img src="/wippass.PNG" alt="Wippass Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
+              <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Wippass</h3>
+              <p className="text-base md:text-lg mb-4 text-gray-800">
                 An online ticket management and sales platform for event organizers. It provides real-time analytics and a user-friendly interface.
               </p>
               <div className="flex items-center mb-4">
-                <Image src="/kubernetes.svg" alt="Kubernetes Image" className="w-10 h-10 mr-2" />
-                <Image src="/amazon-aws.svg" alt="AWS Image" className="w-10 h-10 mr-2" />
-                <Image src="/flask.svg" alt="Flask Image" className="w-10 h-10 mr-2" />
-                <Image src="/mysql-original-wordmark.svg" alt="MySQL Image" className="w-10 h-10 mr-2" />
-                
+                <Image width={10} height={10} src="/kubernetes.svg" alt="Kubernetes Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/amazon-aws.svg" alt="AWS Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/flask.svg" alt="Flask Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/mysql-original-wordmark.svg" alt="MySQL Image" className="w-10 h-10 mr-2" />
+
               </div>
               <div className="flex space-x-4">
-                <a href="https://wippass.com"  className="bg-emerald-500 text-white px-4 py-2 rounded">Visit Site</a>
+                <a href="https://wippass.com" className="bg-emerald-500 text-white px-4 py-2 rounded">Visit Site</a>
               </div>
             </div>
             {/* Proyecto 2 */}
-            <div className="bg-slate-200 p-6 rounded-lg shadow-lg">
-              <Image src="/result.gif" alt="Project 2 Image" className="w-full h-64 object-cover rounded-t-lg" />
-              <h3 className="text-3xl font-semibold my-4 text-gray-900">Anomaly Detection</h3>
-              <p className="text-lg mb-4 text-gray-800">
-              A Flask application that simulates API performance and detects anomalies using sophisticated algorithms. It offers real-time monitoring and visualization of key API metrics.
+            <div className="bg-slate-100 p-6 rounded-lg shadow-lg">
+              <img src="/result.gif" alt="Project 2 Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
+              <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Anomaly Detection</h3>
+              <p className="text-base md:text-lg mb-4 text-gray-800">
+                A Flask application that simulates API performance and detects anomalies using AI algorithms. It offers real-time monitoring and visualization of key API metrics.
               </p>
               <div className="flex items-center mb-4">
-                <Image src="/docker.svg" alt="Docker Image" className="w-10 h-10 mr-2" />
-                <Image src="/grafana.svg" alt="Grafana Image" className="w-10 h-10 mr-2" />
-                <Image src="/prometheus.svg" alt="Prometheus Image" className="w-10 h-10 mr-2" />
-                <Image src="/flask.svg" alt="Flask Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/docker.svg" alt="Docker Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/grafana.svg" alt="Grafana Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/prometheus.svg" alt="Prometheus Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/flask.svg" alt="Flask Image" className="w-10 h-10 mr-2" />
               </div>
               <div className="flex space-x-4">
                 <a href="https://www.linkedin.com/pulse/monitoreo-y-detecci%C3%B3n-de-anomal%C3%ADas-en-apis-con-flask-ramiro-vaquero-mf2yc" className="bg-emerald-500 text-white px-4 py-2 rounded">View Case Study</a>
@@ -60,6 +104,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
     </main>
   );
 };
