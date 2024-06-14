@@ -3,7 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { FaEnvelope, FaCopy, FaCheck, FaGithub, FaLinkedin } from 'react-icons/fa';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import LogoCarousel from './components/LogoCarousel';
 
 const HomePage = () => {
 
@@ -15,6 +16,20 @@ const HomePage = () => {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000); // Reset icon after 2 seconds
   };
+
+  const technologies = [
+    "/kubernetes.svg",
+    "/docker.svg",
+    "/grafana.svg",
+    "/prometheus.svg",
+    "python.svg",
+    "JavaScript-logo.png",
+    "google-cloud.svg",
+    "azure.png",
+    "/amazon-aws.svg",
+  ];
+
+
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-slate-50 text-gray-800">
@@ -30,8 +45,8 @@ const HomePage = () => {
           alt="Avatar"
           className="relative z-10 w-24 h-24 rounded-full mb-4 md:w-32 md:h-32"
         />
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 relative z-10">Markel Ramiro</h1>
-        <p className="text-lg md:text-2xl text-center max-w-2xl relative z-10">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 relative z-10">Markel Ramiro</h1>
+        <p className="text-lg md:text-2xl lg:text-3xl xl:text-4xl text-center max-w-2xl relative z-10">
           Driven by Big Data, Backend Development and Cloud Solutions | Entrepreneur.
         </p>
         {/* Sección de Contacto */}
@@ -45,21 +60,26 @@ const HomePage = () => {
           </button>
         </div>
         <div className="flex space-x-8 mt-8 relative z-10">
-            <a href="https://github.com/Riemann-def" className="text-slate-900 hover:text-slate-800">
-              <FaGithub size={52} />
-            </a>
-            <a href="https://www.linkedin.com/in/markel-ramiro-vaquero-92530319b/" className="text-blue-400 hover:text-blue-300">
-              <FaLinkedin size={52} />
-            </a>
-          </div>
-        
-        {/* Flecha de Scroll, solo en pantallas grandes */}
-        <div className="hidden md:block absolute bottom-8 animate-bounce">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+          <a href="https://github.com/Riemann-def" className="text-slate-900 hover:text-blue-500">
+            <FaGithub size={52} />
+          </a>
+          <a href="https://www.linkedin.com/in/markel-ramiro-vaquero-92530319b/" className="text-slate-800 hover:text-blue-500">
+            <FaLinkedin size={52} />
+          </a>
         </div>
       </section>
+
+      {/* Sección de Tecnologías */}
+      <section className="w-full py-24 px-4 md:px-8 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12 text-gray-800">My Daily Tools</h2>
+          <p className="text-lg md:text-xl text-gray-800 mb-12">
+          Here are the technologies I work with every day to create efficient and scalable solutions.
+          </p>
+        </div>
+        <LogoCarousel />
+      </section>
+
 
       {/* Sección de Proyectos */}
       <section className="w-full py-24 px-4 md:px-8 bg-slate-50">

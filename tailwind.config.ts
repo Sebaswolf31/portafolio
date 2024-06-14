@@ -28,10 +28,15 @@ const config: Config = {
           '50%': { transform: 'translate(-50%, -50%) translateX(-60px) translateY(20px) scale(0.9)' },
           '75%': { transform: 'translate(-50%, -50%) translateX(40px) translateY(40px) scale(1.05)' },
         },
+        slide: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(calc(-100% / 2))' },
+        },
       },
       animation: {
         move: 'move 8s ease-in-out infinite',
         'move-slower': 'move-slower 10s ease-in-out infinite',
+        'slide-infinite': 'slide 25s ease-in-out infinite',
       },
     },
   },
