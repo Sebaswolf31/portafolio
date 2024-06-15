@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { FaEnvelope, FaCopy, FaCheck, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useState, useEffect, useRef } from 'react';
 import LogoCarousel from './components/LogoCarousel';
+import Navbar from './components/Navbar';
+import Experience from './components/Experience';
 
 const HomePage = () => {
 
@@ -32,7 +34,9 @@ const HomePage = () => {
 
 
   return (
+
     <main className="flex flex-col items-center justify-center min-h-screen bg-slate-50 text-gray-800">
+      <Navbar />
       {/* Primera Sección Visual */}
       <section className="relative w-full flex flex-col items-center justify-center py-12 px-4 text-gray-800 md:pb-48">
         {/* Círculo 1 */}
@@ -70,7 +74,7 @@ const HomePage = () => {
       </section>
 
       {/* Sección de Tecnologías */}
-      <section className="w-full py-24 px-4 md:px-8 bg-slate-50">
+      <section className="w-full py-24 px-4 md:px-8 bg-slate-50" id='tools'>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-gray-800">My Daily Tools</h2>
           <p className="text-lg md:text-xl text-gray-800 mb-12">
@@ -82,7 +86,7 @@ const HomePage = () => {
 
 
       {/* Sección de Proyectos */}
-      <section className="w-full py-24 px-4 md:px-8 bg-slate-50">
+      <section className="w-full py-24 px-4 md:px-8 bg-slate-50" id='projects'>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-gray-800">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -122,6 +126,17 @@ const HomePage = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Sección de Experiencia */}
+      <section className="w-full py-24 px-4 md:px-8 bg-slate-50" id='experience'>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12 text-gray-800">Experience</h2>
+          <p className="text-lg md:text-xl text-gray-800 mb-12">
+            Here are some of the milestones I have achieved in my career.
+          </p>
+          <Experience />
         </div>
       </section>
 
