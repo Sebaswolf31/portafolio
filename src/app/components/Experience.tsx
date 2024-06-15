@@ -8,7 +8,7 @@ const Experience = () => {
                     <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">Jun, 2024</time>
                     <div className="text-xl font-bold text-slate-900">Achieved €30,000 in Transactions</div>
                 </div>
-                <div className="text-slate-500">Successfully processed over €30,000 in transactions through Wippass. The platform has garnered 20,000 registered users and has been utilized in major cities such as Bilbao, Barcelona, and Madrid. This milestone reflects the platform's growing popularity and reliability in managing event ticket sales.</div>
+                <div className="text-slate-500">Successfully processed over €30,000 in transactions through Wippass. The platform has garnered 20,000 registered users and has been utilized in major cities such as Bilbao, Barcelona, and Madrid. This milestone reflects the platform&apos;s growing popularity and reliability in managing event ticket sales.</div>
             </div>
 
             {/* Item #2 */}
