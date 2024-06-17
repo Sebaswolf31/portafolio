@@ -45,7 +45,7 @@ const HomePage = () => {
         <div className="absolute top-1/2 left-2/3 w-32 h-32 bg-lime-50 rounded-full mix-blend-multiply blur-2xl transform -translate-y-1/2 animate-move md:w-64 md:h-64 lg:w-96 lg:h-96"></div>
         {/* Contenido */}
         <img
-          src="/perfil.JPG"
+          src="/perfil-markel.png"
           alt="Avatar"
           className="relative z-10 w-24 h-24 rounded-full mb-4 md:w-32 md:h-32"
         />
