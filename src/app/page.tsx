@@ -143,10 +143,9 @@ const HomePage = () => {
               </p>
               <div className="flex items-center mb-4">
                 <Image width={10} height={10} src="/next.svg" alt="Next.js Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/typescript.svg" alt="TypeScript Image" className="w-10 h-10 mr-2" />
                 <Image width={10} height={10} src="/tailwind.svg" alt="Tailwind Image" className="w-10 h-10 mr-2" />
                 <Image width={10} height={10} src="/vercel.svg" alt="Vercel Image" className="w-10 h-10 mr-2" />
-                <Image width={10} height={10} src="/typescript.svg" alt="TypeScript Image" className="w-10 h-10 mr-2" />
-
               </div>
               <div className="flex space-x-4">
                 <a href="https://github.com/Riemann-def/portfolio" className="bg-black text-white px-4 py-2 rounded">View Code</a>
