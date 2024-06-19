@@ -45,7 +45,7 @@ const HomePage = () => {
         <div className="absolute top-1/2 left-2/3 w-32 h-32 bg-lime-50 rounded-full mix-blend-multiply blur-2xl transform -translate-y-1/2 animate-move md:w-64 md:h-64 lg:w-96 lg:h-96"></div>
         {/* Contenido */}
         <img
-          src="/perfil-markel.png"
+          src="/perfil-markel.jpg"
           alt="Avatar"
           className="relative z-10 w-24 h-24 rounded-full mb-4 md:w-32 md:h-32"
         />
@@ -85,14 +85,14 @@ const HomePage = () => {
       </section>
 
 
-      {/* Sección de Proyectos */}
+      {/* Sección de Proyectos Principales*/}
       <section className="w-full py-24 px-4 md:px-8 bg-slate-50" id='projects'>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-gray-800">Projects</h2>
+          <h2 className="text-4xl font-bold mb-12 text-gray-800">Main Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Proyecto 1 */}
             <div className="bg-slate-100 p-6 rounded-lg shadow-lg">
-              <img src="/wippass.PNG" alt="Wippass Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
+              <img src="/wippass.jpg" alt="Wippass Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
               <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Wippass</h3>
               <p className="text-base md:text-lg mb-4 text-gray-800">
                 An online ticket management and sales platform for event organizers. It provides real-time analytics and a user-friendly interface.
@@ -123,6 +123,32 @@ const HomePage = () => {
               </div>
               <div className="flex space-x-4">
                 <a href="https://www.linkedin.com/pulse/monitoreo-y-detecci%C3%B3n-de-anomal%C3%ADas-en-apis-con-flask-ramiro-vaquero-mf2yc" className="bg-emerald-500 text-white px-4 py-2 rounded">View Case Study</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sección de Otros Proyectos*/}
+      <section className="w-full py-24 px-4 md:px-8 bg-slate-50" id='projects'>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12 text-gray-800">Other Projects...</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* POrtfolio */}
+            <div className="bg-slate-100 p-6 rounded-lg shadow-lg">
+              <img src="/screenshoot.jpg" alt="Portfolio Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
+              <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Portfolio</h3>
+              <p className="text-base md:text-lg mb-4 text-gray-800">
+                My personal portfolio built with Next.js and Tailwind CSS. It showcases my projects, skills, and experience.
+              </p>
+              <div className="flex items-center mb-4">
+                <Image width={10} height={10} src="/next.svg" alt="Next.js Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/tailwind.svg" alt="Tailwind Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/vercel.svg" alt="Vercel Image" className="w-10 h-10 mr-2" />
+
+              </div>
+              <div className="flex space-x-4">
+                <a href="https://github.com/Riemann-def/portfolio" className="bg-black text-white px-4 py-2 rounded">View Code</a>
               </div>
             </div>
           </div>
