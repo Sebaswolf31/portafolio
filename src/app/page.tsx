@@ -145,6 +145,7 @@ const HomePage = () => {
                 <Image width={10} height={10} src="/next.svg" alt="Next.js Image" className="w-10 h-10 mr-2" />
                 <Image width={10} height={10} src="/tailwind.svg" alt="Tailwind Image" className="w-10 h-10 mr-2" />
                 <Image width={10} height={10} src="/vercel.svg" alt="Vercel Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/typescript.svg" alt="TypeScript Image" className="w-10 h-10 mr-2" />
 
               </div>
               <div className="flex space-x-4">
