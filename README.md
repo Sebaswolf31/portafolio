@@ -27,11 +27,11 @@ Para correr este proyecto localmente, sigue estos pasos:
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/tu-usuario/tu-repositorio.git
+    git clone git@github.com:Riemann-def/portfolio.git
     ```
 2. Navega al directorio del proyecto:
     ```bash
-    cd tu-repositorio
+    cd portfolio
     ```
 3. Instala las dependencias:
     ```bash
