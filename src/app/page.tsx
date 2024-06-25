@@ -90,7 +90,7 @@ const HomePage = () => {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-gray-800">Main Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Proyecto 1 */}
+            {/* Wippass */}
             <div className="bg-slate-100 p-6 rounded-lg shadow-lg">
               <img src="/wippass.jpg" alt="Wippass Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
               <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Wippass</h3>
@@ -108,23 +108,24 @@ const HomePage = () => {
                 <a href="https://wippass.com" className="bg-emerald-500 text-white px-4 py-2 rounded">Visit Site</a>
               </div>
             </div>
-            {/* Proyecto 2 */}
-            <div className="bg-slate-100 p-6 rounded-lg shadow-lg">
-              <img src="/result.gif" alt="Project 2 Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
-              <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Anomaly Detection</h3>
+
+             {/* Smart Query */}
+             <div className="bg-slate-100 p-6 rounded-lg shadow-lg">
+              <img src="/wippass.jpg" alt="Wippass Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
+              <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Smart Query</h3>
               <p className="text-base md:text-lg mb-4 text-gray-800">
-                A Flask application that simulates API performance and detects anomalies using AI algorithms. It offers real-time monitoring and visualization of key API metrics.
+                An online platform that allows users to access SQL data using natural language queries.
               </p>
               <div className="flex items-center mb-4">
                 <Image width={10} height={10} src="/docker.svg" alt="Docker Image" className="w-10 h-10 mr-2" />
-                <Image width={10} height={10} src="/grafana.svg" alt="Grafana Image" className="w-10 h-10 mr-2" />
-                <Image width={10} height={10} src="/prometheus.svg" alt="Prometheus Image" className="w-10 h-10 mr-2" />
-                <Image width={10} height={10} src="/flask.svg" alt="Flask Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/rabbitmq.svg" alt="RabbitMQ Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/openai.svg" alt="OpenAI Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/react.svg" alt="React Image" className="w-10 h-10 mr-2" />
+
               </div>
-              <div className="flex space-x-4">
-                <a href="https://www.linkedin.com/pulse/monitoreo-y-detecci%C3%B3n-de-anomal%C3%ADas-en-apis-con-flask-ramiro-vaquero-mf2yc" className="bg-emerald-500 text-white px-4 py-2 rounded">View Case Study</a>
-              </div>
+              
             </div>
+            
           </div>
         </div>
       </section>
@@ -134,7 +135,7 @@ const HomePage = () => {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-gray-800">Other Projects...</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* POrtfolio */}
+            {/* Portfolio */}
             <div className="bg-slate-100 p-6 rounded-lg shadow-lg">
               <img src="/screenshoot.jpg" alt="Portfolio Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
               <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Portfolio</h3>
@@ -149,6 +150,23 @@ const HomePage = () => {
               </div>
               <div className="flex space-x-4">
                 <a href="https://github.com/Riemann-def/portfolio" className="bg-black text-white px-4 py-2 rounded">View Code</a>
+              </div>
+            </div>
+            {/* Proyecto Anomalias */}
+            <div className="bg-slate-100 p-6 rounded-lg shadow-lg">
+              <img src="/result.gif" alt="Project 2 Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
+              <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Anomaly Detection</h3>
+              <p className="text-base md:text-lg mb-4 text-gray-800">
+                A Flask application that simulates API performance and detects anomalies using AI algorithms. It offers real-time monitoring and visualization of key API metrics.
+              </p>
+              <div className="flex items-center mb-4">
+                <Image width={10} height={10} src="/docker.svg" alt="Docker Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/grafana.svg" alt="Grafana Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/prometheus.svg" alt="Prometheus Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/flask.svg" alt="Flask Image" className="w-10 h-10 mr-2" />
+              </div>
+              <div className="flex space-x-4">
+                <a href="https://www.linkedin.com/pulse/monitoreo-y-detecci%C3%B3n-de-anomal%C3%ADas-en-apis-con-flask-ramiro-vaquero-mf2yc" className="bg-emerald-500 text-white px-4 py-2 rounded">View Case Study</a>
               </div>
             </div>
           </div>
