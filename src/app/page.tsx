@@ -111,7 +111,7 @@ const HomePage = () => {
 
              {/* Smart Query */}
              <div className="bg-slate-100 p-6 rounded-lg shadow-lg">
-              <img src="/wippass.jpg" alt="Wippass Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
+              <img src="/searchbar.PNG" alt="Smart Query Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
               <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Smart Query</h3>
               <p className="text-base md:text-lg mb-4 text-gray-800">
                 An online platform that allows users to access SQL data using natural language queries.
