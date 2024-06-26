@@ -123,6 +123,9 @@ const HomePage = () => {
                 <Image width={10} height={10} src="/react.svg" alt="React Image" className="w-10 h-10 mr-2" />
 
               </div>
+              <div className="flex space-x-4">
+                <a href="https://github.com/Riemann-def/smart-query" className="bg-emerald-500 text-white px-4 py-2 rounded">View Code</a>
+              </div>
               
             </div>
             
