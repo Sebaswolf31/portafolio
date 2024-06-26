@@ -105,7 +105,7 @@ const HomePage = () => {
 
               </div>
               <div className="flex space-x-4">
-                <a href="https://wippass.com" className="bg-emerald-500 text-white px-4 py-2 rounded">Visit Site</a>
+                <a href="https://wippass.com" className="bg-black text-white px-4 py-2 rounded">Visit Site</a>
               </div>
             </div>
 
@@ -124,7 +124,7 @@ const HomePage = () => {
 
               </div>
               <div className="flex space-x-4">
-                <a href="https://github.com/Riemann-def/smart-query" className="bg-emerald-500 text-white px-4 py-2 rounded">View Code</a>
+                <a href="https://github.com/Riemann-def/smart-query" className="bg-black text-white px-4 py-2 rounded">View Code</a>
               </div>
               
             </div>
@@ -169,7 +169,7 @@ const HomePage = () => {
                 <Image width={10} height={10} src="/flask.svg" alt="Flask Image" className="w-10 h-10 mr-2" />
               </div>
               <div className="flex space-x-4">
-                <a href="https://www.linkedin.com/pulse/monitoreo-y-detecci%C3%B3n-de-anomal%C3%ADas-en-apis-con-flask-ramiro-vaquero-mf2yc" className="bg-emerald-500 text-white px-4 py-2 rounded">View Case Study</a>
+                <a href="https://www.linkedin.com/pulse/monitoreo-y-detecci%C3%B3n-de-anomal%C3%ADas-en-apis-con-flask-ramiro-vaquero-mf2yc" className="bg-black text-white px-4 py-2 rounded">View Case Study</a>
               </div>
             </div>
           </div>
