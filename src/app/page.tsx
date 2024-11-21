@@ -42,7 +42,7 @@ const HomePage = () => {
         {/* Círculo 1 */}
         <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-emerald-50 rounded-full mix-blend-multiply blur-xl transform -translate-y-1/2 animate-move-slower md:w-64 md:h-64 lg:w-96 lg:h-96"></div>
         {/* Círculo 2 */}
-        <div className="absolute top-1/2 left-2/3 w-32 h-32 bg-lime-50 rounded-full mix-blend-multiply blur-2xl transform -translate-y-1/2 animate-move md:w-64 md:h-64 lg:w-96 lg:h-96"></div>
+        <div className="absolute top-1/2 left-2/3 w-32 h-32 bg-indigo-100 rounded-full mix-blend-multiply blur-2xl transform -translate-y-1/2 animate-move md:w-64 md:h-64 lg:w-96 lg:h-96"></div>
         {/* Contenido */}
         <img
           src="/perfil-markel.jpg"
@@ -51,10 +51,10 @@ const HomePage = () => {
         />
         <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 relative z-10">Markel Ramiro</h1>
         <p className="text-lg md:text-2xl lg:text-3xl xl:text-4xl text-center max-w-2xl relative z-10">
-          Driven by Big Data, Backend Development and Cloud Solutions | Entrepreneur.
+          Driven by AI, Backend Development and Cloud Solutions | Entrepreneur.
         </p>
         {/* Sección de Contacto */}
-        <div className="flex items-center space-x-4 mt-12 relative z-10 bg-gray-200/40 p-2 rounded-lg">
+        <div className="flex items-center space-x-4 mt-12 relative z-10 bg-zinc-200/10 p-2 rounded-lg border border-[#e7e7e775]">
           <p className="text-lg md:text-xl text-gray-700">{email}</p>
           <a href={`mailto:${email}`} className="text-slate-400 hover:text-slate-500">
             <FaEnvelope size={24} />
@@ -105,7 +105,8 @@ const HomePage = () => {
 
               </div>
               <div className="flex space-x-4">
-                <a href="https://wippass.com" className="bg-black text-white px-4 py-2 rounded">Visit Site</a>
+                <a href="https://www.linkedin.com/posts/markel-ramiro-vaquero-92530319b_cu%C3%A1nto-dinero-ha-procesado-wippass-para-activity-7190682971429883904-Je80?utm_source=share&utm_medium=member_desktop"
+                 className="bg-black text-white px-4 py-2 rounded">View Post</a>
               </div>
             </div>
 

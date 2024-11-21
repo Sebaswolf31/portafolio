@@ -5,11 +5,11 @@ const technologies = [
     'python.svg',
     '/kubernetes.svg',
     '/docker.svg',    
-    'google-cloud.svg',
+    'openai.svg',
     'azure.png',
     '/amazon-aws.svg',
     '/grafana.svg',
-    '/prometheus.svg',
+    '/postgres.png',
 ];
 
 const LogoCarousel = () => {

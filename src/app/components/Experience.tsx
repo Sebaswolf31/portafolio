@@ -1,6 +1,21 @@
 const Experience = () => {
     return (
         <div className="-my-6">
+            {/* Item #5 */}
+            <div className="relative pl-8 sm:pl-32 py-6 group">
+                <div className="font-caveat font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">Current Role</div>
+                <div className="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                    <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">Jul, 2024</time>
+                    <div className="text-xl font-bold text-slate-900">Specialist and AI Team Lead at <a href="https://devol.es" className="text-indigo-600 hover:underline">Devol</a></div>
+                </div>
+                <div className="text-slate-500">
+                    Leading the AI development team at Devol, coordinating projects that integrate artificial intelligence into business applications. 
+                    Currently spearheading <a href="https://docmind.devol.es" className='hover:underline'><strong>DocMind</strong></a>, a project focused on document field extraction for seamless integration with the company’s RPA system. 
+                    Leveraging technologies like <strong>OpenAI</strong>, <strong>Anthropic</strong>, <strong>Flask</strong>, and primarily using <strong>Azure</strong> for infrastructure. 
+                    My role encompasses overseeing development, ensuring scalability, and aligning AI-driven solutions with company goals while fostering collaboration within the team.
+                </div>
+            </div>
+
             {/* Item #1 */}
             <div className="relative pl-8 sm:pl-32 py-6 group">
                 <div className="font-caveat font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">Growth and Milestones</div>
