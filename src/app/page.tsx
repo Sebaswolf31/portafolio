@@ -153,7 +153,7 @@ const HomePage = () => {
                 <Image width={10} height={10} src="/postgres.svg" alt="Postgres Image" className="w-10 h-10 mr-2" />
               </div>
               <div className="flex space-x-4">
-                <a href="https:resumenes-ia.markelramiro.com" className="bg-black text-white px-4 py-2 rounded">Try it</a>
+                <a href="https://resumenes-ia.markelramiro.com" className="bg-black text-white px-4 py-2 rounded">Try it</a>
               </div>
             </div>
             {/* Proyecto Anomalias */}
