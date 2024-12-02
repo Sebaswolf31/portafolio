@@ -139,21 +139,21 @@ const HomePage = () => {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-gray-800">Other Projects...</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Portfolio */}
+            {/* Resumenes IA */}
             <div className="bg-slate-100 p-6 rounded-lg shadow-lg">
-              <img src="/screenshoot.jpg" alt="Portfolio Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
-              <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Portfolio</h3>
+              <img src="/resumenes-ia.jpg" alt="Resumenes IA UI Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
+              <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Resumenes IA</h3>
               <p className="text-base md:text-lg mb-4 text-gray-800">
-              My personal portfolio, built with Next.js and Tailwind CSS, showcases my projects, skills, and experience. It is deployed with Vercel and GitHub.
+              An innovative application that allows users to summarize and analyze news articles through a URL. It automatically extracts the category, tone, and fake news level.
               </p>
               <div className="flex items-center mb-4">
-                <Image width={10} height={10} src="/next.svg" alt="Next.js Image" className="w-10 h-10 mr-2" />
-                <Image width={10} height={10} src="/typescript.svg" alt="TypeScript Image" className="w-10 h-10 mr-2" />
-                <Image width={10} height={10} src="/tailwind.svg" alt="Tailwind Image" className="w-10 h-10 mr-2" />
-                <Image width={10} height={10} src="/vercel.svg" alt="Vercel Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/sveltekit.svg" alt="SvelteKit Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/flask.svg" alt="Flask Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/openai.svg" alt="OpenAi Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/postgres.svg" alt="Postgres Image" className="w-10 h-10 mr-2" />
               </div>
               <div className="flex space-x-4">
-                <a href="https://github.com/Riemann-def/portfolio" className="bg-black text-white px-4 py-2 rounded">View Code</a>
+                <a href="https:resumenes-ia.markelramiro.com" className="bg-black text-white px-4 py-2 rounded">Try it</a>
               </div>
             </div>
             {/* Proyecto Anomalias */}

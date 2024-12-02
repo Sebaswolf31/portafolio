@@ -9,7 +9,7 @@ const technologies = [
     'azure.png',
     '/amazon-aws.svg',
     '/grafana.svg',
-    '/postgres.png',
+    '/postgres.svg',
 ];
 
 const LogoCarousel = () => {
