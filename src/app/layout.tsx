@@ -7,7 +7,7 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Markel Ramiro - Portfolio",
-  description: "Showcasing my projects and skills.",
+  description: "Mostrando mis proyectos y habilidades.",
 };
 
 export default function RootLayout({

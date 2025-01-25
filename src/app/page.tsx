@@ -51,7 +51,7 @@ const HomePage = () => {
         />
         <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 relative z-10">Markel Ramiro</h1>
         <p className="text-lg md:text-2xl lg:text-3xl xl:text-4xl text-center max-w-2xl relative z-10">
-          Driven by AI, Backend Development and Cloud Solutions | Entrepreneur.
+        Impulsado por la IA, el Desarrollo Backend y Soluciones en la Nube | Emprendedor.
         </p>
         {/* Sección de Contacto */}
         <div className="flex items-center space-x-4 mt-12 relative z-10 bg-zinc-200/10 p-2 rounded-lg border border-[#e7e7e775]">
@@ -74,11 +74,11 @@ const HomePage = () => {
       </section>
 
       {/* Sección de Tecnologías */}
-      <section className="w-full py-24 px-4 md:px-8 bg-slate-50" id='tools'>
+      <section className="w-full py-24 px-4 md:px-8 bg-slate-50" id='herramientas'>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-gray-800">My Daily Tools</h2>
+          <h2 className="text-4xl font-bold mb-12 text-gray-800">Mis Herramientas Diarias</h2>
           <p className="text-lg md:text-xl text-gray-800 mb-12">
-          Here are the technologies I work with every day to create efficient and scalable solutions.
+          Aquí están las tecnologías con las que trabajo todos los días para crear soluciones eficientes y escalables.
           </p>
         </div>
         <LogoCarousel />
@@ -86,16 +86,16 @@ const HomePage = () => {
 
 
       {/* Sección de Proyectos Principales*/}
-      <section className="w-full py-24 px-4 md:px-8 bg-slate-50" id='projects'>
+      <section className="w-full py-24 px-4 md:px-8 bg-slate-50" id='proyectos'>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-gray-800">Main Projects</h2>
+          <h2 className="text-4xl font-bold mb-12 text-gray-800">Proyectos Principales</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Wippass */}
             <div className="bg-slate-100 p-6 rounded-lg shadow-lg">
               <img src="/wippass.jpg" alt="Wippass Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
               <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Wippass</h3>
               <p className="text-base md:text-lg mb-4 text-gray-800">
-                An online ticket management and sales platform for event organizers. It provides real-time analytics and a user-friendly interface.
+              Una plataforma online para la gestión y venta de entradas para organizadores de eventos. Ofrece análisis en tiempo real y una interfaz fácil de usar.
               </p>
               <div className="flex items-center mb-4">
                 <Image width={10} height={10} src="/kubernetes.svg" alt="Kubernetes Image" className="w-10 h-10 mr-2" />
@@ -106,7 +106,7 @@ const HomePage = () => {
               </div>
               <div className="flex space-x-4">
                 <a href="https://www.linkedin.com/posts/markel-ramiro-vaquero-92530319b_cu%C3%A1nto-dinero-ha-procesado-wippass-para-activity-7190682971429883904-Je80?utm_source=share&utm_medium=member_desktop"
-                 className="bg-black text-white px-4 py-2 rounded">View Post</a>
+                 className="bg-black text-white px-4 py-2 rounded">Ver Post</a>
               </div>
             </div>
 
@@ -115,7 +115,7 @@ const HomePage = () => {
               <img src="/SmartQuery.PNG" alt="Smart Query Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
               <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Smart Query</h3>
               <p className="text-base md:text-lg mb-4 text-gray-800">
-              An online platform that allows users to access and interact with SQL data using natural language queries, leveraging advanced OpenAI technology like GPT.
+              Una plataforma en línea que permite a los usuarios acceder e interactuar con datos SQL utilizando consultas en lenguaje natural, aprovechando la tecnología avanzada de OpenAI como GPT y utilizando RAG.
               </p>
               <div className="flex items-center mb-4">
                 <Image width={10} height={10} src="/docker.svg" alt="Docker Image" className="w-10 h-10 mr-2" />
@@ -125,7 +125,7 @@ const HomePage = () => {
 
               </div>
               <div className="flex space-x-4">
-                <a href="https://github.com/Riemann-def/smart-query" className="bg-black text-white px-4 py-2 rounded">View Code</a>
+                <a href="https://github.com/Riemann-def/smart-query" className="bg-black text-white px-4 py-2 rounded">Ver Código</a>
               </div>
               
             </div>
@@ -135,16 +135,16 @@ const HomePage = () => {
       </section>
 
       {/* Sección de Otros Proyectos*/}
-      <section className="w-full py-24 px-4 md:px-8 bg-slate-50" id='projects'>
+      <section className="w-full py-24 px-4 md:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-gray-800">Other Projects...</h2>
+          <h2 className="text-4xl font-bold mb-12 text-gray-800">Otros Proyectos...</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Resumenes IA */}
             <div className="bg-slate-100 p-6 rounded-lg shadow-lg">
               <img src="/resumenes-ia.jpg" alt="Resumenes IA UI Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
               <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Resumenes IA</h3>
               <p className="text-base md:text-lg mb-4 text-gray-800">
-              An innovative application that allows users to summarize and analyze news articles through a URL. It automatically extracts the category, tone, and fake news level.
+              Una aplicación innovadora que permite a los usuarios resumir y analizar artículos de noticias a través de una URL. Extrae automáticamente la categoría, el tono y el nivel de noticias falsas.
               </p>
               <div className="flex items-center mb-4">
                 <Image width={10} height={10} src="/sveltekit.svg" alt="SvelteKit Image" className="w-10 h-10 mr-2" />
@@ -159,9 +159,9 @@ const HomePage = () => {
             {/* Proyecto Anomalias */}
             <div className="bg-slate-100 p-6 rounded-lg shadow-lg">
               <img src="/result.gif" alt="Project 2 Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
-              <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Anomaly Detection</h3>
+              <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Detección de Anomalías</h3>
               <p className="text-base md:text-lg mb-4 text-gray-800">
-                A Flask application that simulates API performance and detects anomalies using AI algorithms. It offers real-time monitoring and visualization of key API metrics.
+                Una aplicación Flask que simula el rendimiento de APIs y detecta anomalías utilizando algoritmos de inteligencia artificial. Ofrece monitoreo en tiempo real y visualización de métricas clave de la API.
               </p>
               <div className="flex items-center mb-4">
                 <Image width={10} height={10} src="/docker.svg" alt="Docker Image" className="w-10 h-10 mr-2" />
@@ -178,11 +178,11 @@ const HomePage = () => {
       </section>
 
       {/* Sección de Experiencia */}
-      <section className="w-full py-24 px-4 md:px-8 bg-slate-50" id='experience'>
+      <section className="w-full py-24 px-4 md:px-8 bg-slate-50" id='experiencia'>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-gray-800">Experience</h2>
+          <h2 className="text-4xl font-bold mb-12 text-gray-800">Experiencia</h2>
           <p className="text-lg md:text-xl text-gray-800 mb-12">
-            Here are some of the milestones I have achieved in my career.
+            Aquí hay algunos de los hitos que he alcanzado en mi carrera.
           </p>
           <Experience />
         </div>

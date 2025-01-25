@@ -38,17 +38,17 @@ const Navbar = () => {
                     {/* <a href="https://resumenes-ia.markelramiro.com" className="mx-2 hover:text-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-indigo-500 font-semibold">
                         Resumenes IA
                     </a> */}
-                    <Link href="#tools" className="mx-2 hover:text-gray-300">
-                        Tools
+                    <Link href="#herramientas" className="mx-2 hover:text-gray-300">
+                    Herramientas
                     </Link>
-                    <Link href="#projects" className="mx-2 hover:text-gray-300">
-                        Projects
+                    <Link href="#proyectos" className="mx-2 hover:text-gray-300">
+                    Proyectos
                     </Link>
-                    <Link href="#experience" className="mx-2 hover:text-gray-300">
-                        Experience
+                    <Link href="#experiencia" className="mx-2 hover:text-gray-300">
+                    Experiencia
                     </Link>
                     <a href="/MarkelRamiro_CV.pdf" download className="mx-2 text-blue-500 hover:text-gray-300">
-                        Resume
+                        CV
                     </a>
 
                 </div>
