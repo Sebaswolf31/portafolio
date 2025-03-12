@@ -85,6 +85,20 @@ const HomePage = () => {
       </section>
 
 
+      
+
+      {/* Sección de Experiencia */}
+      <section className="w-full py-24 px-4 md:px-8 bg-slate-50" id='experiencia'>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12 text-gray-800">Experiencia</h2>
+          <p className="text-lg md:text-xl text-gray-800 mb-12">
+            Aquí hay algunos de los hitos que he alcanzado en mi carrera.
+          </p>
+          <Experience />
+        </div>
+      </section>
+
+
       {/* Sección de Proyectos Principales*/}
       <section className="w-full py-24 px-4 md:px-8 bg-slate-50" id='proyectos'>
         <div className="max-w-6xl mx-auto">
@@ -139,21 +153,21 @@ const HomePage = () => {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-gray-800">Otros Proyectos...</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Resumenes IA */}
+            {/* LinkedIn Finder */}
             <div className="bg-slate-100 p-6 rounded-lg shadow-lg">
-              <img src="/resumenes-ia.jpg" alt="Resumenes IA UI Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
-              <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">Resumenes IA</h3>
+              <img src="/linkedin-finder.jpg" alt="LinkedIn Finder UI Image" className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
+              <h3 className="text-2xl md:text-3xl font-semibold my-4 text-gray-900">LinkedIn Finder</h3>
               <p className="text-base md:text-lg mb-4 text-gray-800">
-              Una aplicación innovadora que permite a los usuarios resumir y analizar artículos de noticias a través de una URL. Extrae automáticamente la categoría, el tono y el nivel de noticias falsas.
+              Un proyecto que automatiza la búsqueda de empleo en LinkedIn. Permite hacer scraping de numerosas ofertas y luego analizarlas con IA para extraer información y filtrar solo las que se ajustan a tus necesidades.
               </p>
               <div className="flex items-center mb-4">
-                <Image width={10} height={10} src="/sveltekit.svg" alt="SvelteKit Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/openai.svg" alt="OpenAI Image" className="w-10 h-10 mr-2" />
                 <Image width={10} height={10} src="/flask.svg" alt="Flask Image" className="w-10 h-10 mr-2" />
-                <Image width={10} height={10} src="/openai.svg" alt="OpenAi Image" className="w-10 h-10 mr-2" />
-                <Image width={10} height={10} src="/postgres.svg" alt="Postgres Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/linkedin.png" alt="LinkedIn Image" className="w-10 h-10 mr-2" />
+                <Image width={10} height={10} src="/sveltekit.svg" alt="SvelteKit Image" className="w-10 h-10 mr-2" />
               </div>
               <div className="flex space-x-4">
-                <a href="https://resumenes-ia.markelramiro.com" className="bg-black text-white px-4 py-2 rounded">Try it</a>
+                <a href="https://www.linkedin.com/posts/markel-ramiro-vaquero-92530319b_baeqsquedadeempleo-productividad-automatizaciaejn-activity-7305559300788117504-8cL9" className="bg-black text-white px-4 py-2 rounded">Ver Artículo</a>
               </div>
             </div>
             {/* Proyecto Anomalias */}
@@ -177,16 +191,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Sección de Experiencia */}
-      <section className="w-full py-24 px-4 md:px-8 bg-slate-50" id='experiencia'>
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-gray-800">Experiencia</h2>
-          <p className="text-lg md:text-xl text-gray-800 mb-12">
-            Aquí hay algunos de los hitos que he alcanzado en mi carrera.
-          </p>
-          <Experience />
-        </div>
-      </section>
+      
 
     </main>
   );
