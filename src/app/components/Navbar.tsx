@@ -35,9 +35,9 @@ const Navbar = () => {
         <nav className="bg-slate-50 text-gray-800 p-4 sm:p-6 md:flex md:justify-between md:items-center">
             <div className="container mx-auto flex items-center justify-between">
                 <div className={getMenuClasses()}>
-                    <a href="https://facturas.markelramiro.com" className="mx-2 hover:text-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-indigo-500 font-semibold">
+                    {/* <a href="https://facturas.markelramiro.com" className="mx-2 hover:text-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-indigo-500 font-semibold">
                         Facturas IA
-                    </a>
+                    </a> */}
                     
                     <Link href="#herramientas" className="mx-2 hover:text-gray-300">
                     Herramientas
