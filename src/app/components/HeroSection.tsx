@@ -1,107 +1,121 @@
-// components/HeroSection.jsx
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useLanguage } from '../context/LanguageContext';
+'use client';
 
-const HeroSection = () => {
+import React, { useEffect, useRef } from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import Image from 'next/image';
+
+const HeroSection: React.FC = () => {
   const { t } = useLanguage();
-  
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-  };
+  const blobRef1 = useRef<HTMLDivElement>(null);
+  const blobRef2 = useRef<HTMLDivElement>(null);
+  const blobRef3 = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const { clientX, clientY } = e;
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      
+      // Calculate percentage of mouse position relative to center
+      const percentX = (clientX - centerX) / centerX;
+      const percentY = (clientY - centerY) / centerY;
+      
+      // Move blobs in opposite directions of mouse movement
+      if (blobRef1.current) {
+        blobRef1.current.style.transform = `translate(${-percentX * 20}px, ${-percentY * 20}px)`;
+      }
+      if (blobRef2.current) {
+        blobRef2.current.style.transform = `translate(${percentX * 15}px, ${-percentY * 15}px)`;
+      }
+      if (blobRef3.current) {
+        blobRef3.current.style.transform = `translate(${-percentX * 10}px, ${percentY * 10}px)`;
+      }
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   return (
-    <section id="hero" className="h-screen w-full relative flex items-center justify-center overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 z-0">
-        <div className="relative h-full w-full">
-          {/* Gradient Orbs */}
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-indigo-600/20 filter blur-3xl animate-float-slow"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-purple-600/20 filter blur-3xl animate-float-medium"></div>
-          <div className="absolute top-2/3 left-1/3 w-40 h-40 rounded-full bg-pink-600/20 filter blur-3xl animate-float-fast"></div>
-
-          {/* Grid pattern overlay */}
-          <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20"></div>
+    <section id="hero" className="min-h-screen flex items-center relative overflow-hidden pt-20">
+      {/* Background Blobs */}
+      <div ref={blobRef1} className="blob blob-blue h-96 w-96 top-20 -left-20 transition-transform duration-300"></div>
+      <div ref={blobRef2} className="blob blob-green h-80 w-80 bottom-20 right-20 transition-transform duration-300"></div>
+      <div ref={blobRef3} className="blob blob-purple h-64 w-64 top-1/2 right-1/4 transition-transform duration-300"></div>
+      
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="order-2 lg:order-1">
+            <div className="max-w-2xl">
+              <span className="inline-block px-3 py-1 text-sm font-medium bg-blue-100 text-blue-800 rounded-full mb-6">
+                Artificial Intelligence & Data Science
+              </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-tight">
+                <span className="text-blue-600">Markel Ramiro</span><br/>
+                <span>{t('hero.title')}</span>
+              </h1>
+              <p className="text-xl text-gray-600 mb-8">
+                {t('hero.subtitle')}
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <a href="#projects" className="btn-primary">
+                  {t('hero.cta')}
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </a>
+                <a href="https://github.com/Riemann-def" target="_blank" rel="noopener noreferrer" className="btn-outline">
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+              
+              <div className="mt-12 flex items-center space-x-6">
+                <div className="flex items-center">
+                  <div className="bg-blue-600 h-10 w-1 rounded mr-4"></div>
+                  <div>
+                    <div className="text-sm text-gray-500">University of the Basque Country</div>
+                    <div className="font-medium">B.Sc. in Artificial Intelligence</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="order-1 lg:order-2 flex justify-center">
+            <div className="relative">
+              {/* Profile image with decorative elements */}
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                <Image
+                  src="/perfil-markel.jpg"
+                  alt="Markel Ramiro"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 bg-blue-100 px-4 py-2 rounded-lg shadow-md">
+                <div className="text-blue-800 font-medium">ML Engineer</div>
+              </div>
+              
+              <div className="absolute -bottom-4 -left-4 bg-green-100 px-4 py-2 rounded-lg shadow-md">
+                <div className="text-green-800 font-medium">Data Scientist</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeInUp}
-          className="flex flex-col items-center text-center"
-        >
-          <img
-            src="/perfil-markel.jpg"
-            alt="Markel Ramiro"
-            className="w-24 h-24 rounded-full object-cover border-2 border-indigo-500 p-1 mb-6"
-          />
-
-          <div className="mb-4 inline-block relative">
-            <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-              Markel Ramiro
-            </h1>
-            <div className="h-1 w-1/3 mx-auto bg-gradient-to-r from-indigo-500 to-purple-600 mt-2"></div>
-          </div>
-
-          <h2 className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
-            {t('hero.title')}
-          </h2>
-
-          <div className="mt-8 flex space-x-6">
-            <a
-              href="mailto:hola@markelramiro.com"
-              className="px-6 py-3 rounded-full bg-indigo-600/10 border border-indigo-500/30 hover:bg-indigo-600/20 transition-all duration-300 flex items-center space-x-2"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-              </svg>
-              <span>Contact Me</span>
-            </a>
-            <a
-              href="#projects"
-              className="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 flex items-center space-x-2"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
-              </svg>
-              <span>{t('nav.projects')}</span>
-            </a>
-          </div>
-
-          <div className="mt-10 flex space-x-6">
-            <a
-              href="https://github.com/Riemann-def"
-              className="text-gray-400 hover:text-white transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" clipRule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-              </svg>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/markel-ramiro-vaquero-92530319b/"
-              className="text-gray-400 hover:text-white transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
-            </a>
-          </div>
-        </motion.div>
-      </div>
+      
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
       </div>
     </section>
   );
 };
-
 export default HeroSection;
