@@ -20,7 +20,7 @@ const CursorGlow: React.FC = () => {
     const hideGlow = () => setHidden(true);
 
     // Throttle mouse move event for performance
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: NodeJS.Timeout | null = null; // Cambiado a null
     const throttledUpdatePosition = (e: MouseEvent) => {
       if (timeoutId) return;
       timeoutId = setTimeout(() => {
@@ -35,7 +35,7 @@ const CursorGlow: React.FC = () => {
     return () => {
       window.removeEventListener('mousemove', throttledUpdatePosition);
       window.removeEventListener('mouseout', hideGlow);
-      clearTimeout(timeoutId);
+      if (timeoutId) clearTimeout(timeoutId); // Asegurarse de que timeoutId no sea null
     };
   }, []);
 
