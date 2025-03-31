@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SectionHeader from './shared/SectionHeader';
 
-const AboutCard = ({ icon, title, description }) => {
+const AboutCard = ({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) => {
   return (
     <motion.div
       variants={{
