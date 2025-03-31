@@ -47,7 +47,7 @@ const AboutSection: React.FC = () => {
     {
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+          <path fill="currentColor" d="M19.36 10.04A6.5 6.5 0 0012 4a6.5 6.5 0 00-7.36 6.04A4.5 4.5 0 002 16.5 4.5 4.5 0 006.5 21h11a4.5 4.5 0 000-9h-1.64A6.5 6.5 0 0019.36 10.04z" />
         </svg>
       ),
       title: t('about.card3.title'),

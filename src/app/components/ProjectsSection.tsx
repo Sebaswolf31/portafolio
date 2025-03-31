@@ -141,7 +141,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: t('projects.anomaly.title'),
       description: t('projects.anomaly.desc'),
-      image: "/anomaly-detection.jpg",
+      image: "/result.gif",
       technologies: ["Python", "Kubernetes", "Prometheus", "Flask", "Scikit-learn"],
       links: {
         code: "https://github.com/Riemann-def/anomaly-detection",
@@ -174,7 +174,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: t('projects.nlp.title'),
       description: t('projects.nlp.desc'),
-      image: "/nl-to-sql.jpg",
+      image: "/SmartQuery.PNG",
       technologies: ["Python", "RAG", "LangChain", "SQL", "OpenAI"],
       links: {
         code: "https://github.com/Riemann-def/smart-query"

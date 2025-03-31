@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { motion } from 'framer-motion';
 
 interface TimelineItemProps {
   title: string;
@@ -23,22 +24,28 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   isActive 
 }) => {
   return (
-    <div className="relative pl-10 pb-10 last:pb-0">
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5 }}
+      className="relative pl-10 pb-10 last:pb-0"
+    >
       {/* Vertical line */}
-      <div className="absolute left-0 top-0 bottom-0 w-px bg-blue-200"></div>
+      <div className="absolute left-0 top-0 bottom-0 w-px bg-indigo-200"></div>
       
       {/* Icon marker */}
       <div className={`absolute left-0 top-0 w-8 h-8 rounded-full flex items-center justify-center -translate-x-1/2 
-        ${isActive ? 'bg-blue-600 text-white border-4 border-blue-100' : 'bg-white text-blue-600 border-2 border-blue-200'}`}>
+        ${isActive ? 'bg-indigo-600 text-white border-4 border-indigo-100' : 'bg-white text-indigo-600 border-2 border-indigo-200'}`}>
         {icon}
       </div>
       
       <div className={`bg-white rounded-lg shadow-sm p-6 border border-gray-100 ml-4 
-        ${isActive ? 'border-l-4 border-l-blue-600' : ''}`}>
-        <div className="text-sm text-blue-600 font-medium mb-1">
+        ${isActive ? 'border-l-4 border-l-indigo-600' : ''}`}>
+        <div className="text-sm text-indigo-600 font-medium mb-1">
           {date}
           {isActive && (
-            <span className="inline-flex items-center ml-2 px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+            <span className="inline-flex items-center ml-2 px-2 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
               Current
             </span>
           )}
@@ -61,7 +68,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -70,9 +77,9 @@ const ExperienceSection: React.FC = () => {
 
   const experiences = [
     {
-      title: t('experience.devol.title'),
-      date: t('experience.devol.date'),
-      description: t('experience.devol.description'),
+      title: `${t('experience.devol')} Devol`,
+      date: 'Jul 2024 - Present',
+      description: t('experience.devol.desc'),
       tags: ["OpenAI", "Azure", "LLMs", "Python", "Flask", "Docker", "Kubernetes"],
       icon: (
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -82,9 +89,9 @@ const ExperienceSection: React.FC = () => {
       isActive: true
     },
     {
-      title: t('experience.internship.title'),
-      date: t('experience.internship.date'),
-      description: t('experience.internship.description'),
+      title: t('experience.internship'),
+      date: 'Sep 2023 - Mar 2024',
+      description: t('experience.internship.desc'),
       tags: ["AI", "VR Technology", "Sensor Fusion", "Computer Vision", "Python"],
       icon: (
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -96,7 +103,7 @@ const ExperienceSection: React.FC = () => {
       title: "Founder",
       company: "Wippass",
       date: "Mar 2023 - Jul 2024",
-      description: "Built and deployed a complete ticketing platform handling €30,000+ in transactions for local events, with 7,000+ registered users. Managed all technical aspects from development to deployment on AWS.",
+      description: t('experience.wippass.desc'),
       tags: ["Python", "Flask", "MySQL", "AWS", "EC2", "RDS", "S3"],
       icon: (
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -105,9 +112,10 @@ const ExperienceSection: React.FC = () => {
       )
     },
     {
-      title: t('experience.education.title'),
-      date: t('experience.education.date'),
-      description: t('experience.education.description'),
+      title: "B.Sc. in Artificial Intelligence",
+      company: "University of the Basque Country",
+      date: "Sep 2020 - Jul 2024",
+      description: "Focus on machine learning, neural networks, and data processing. Final project on anomaly detection with Kubernetes deployment (Grade: 9/10).",
       tags: ["AI", "Machine Learning", "Neural Networks", "Data Processing", "Kubernetes"],
       icon: (
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -120,12 +128,21 @@ const ExperienceSection: React.FC = () => {
   ];
 
   return (
-    <section id="experience" className="section bg-white">
-      <div className="container">
-        <div className="text-center mb-16">
-          <h2 className="section-title">{t('experience.title')}</h2>
-          <p className="section-subtitle">{t('experience.description')}</p>
-        </div>
+    <section id="experience" className="py-24 bg-white">
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('experience.title')}</h2>
+          <div className="h-1 w-20 bg-indigo-500 mx-auto mb-8"></div>
+          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+            {t('experience.description')}
+          </p>
+        </motion.div>
         
         <div className="max-w-3xl mx-auto">
           {experiences.map((exp, index) => (
@@ -142,22 +159,28 @@ const ExperienceSection: React.FC = () => {
           ))}
         </div>
         
-        <div className="mt-16 bg-blue-50 rounded-xl p-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-16 bg-indigo-50 rounded-xl p-8"
+        >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-blue-600 font-bold text-4xl mb-2">4+</div>
-              <div className="text-gray-700">Years of Experience</div>
+              <div className="text-indigo-600 font-bold text-4xl mb-2">2+</div>
+              <div className="text-gray-700">{t('experience.years')}</div>
             </div>
             <div>
-              <div className="text-blue-600 font-bold text-4xl mb-2">10+</div>
-              <div className="text-gray-700">ML Projects Delivered</div>
+              <div className="text-indigo-600 font-bold text-4xl mb-2">6+</div>
+              <div className="text-gray-700">{t('experience.projects')}</div>
             </div>
             <div>
-              <div className="text-blue-600 font-bold text-4xl mb-2">5+</div>
-              <div className="text-gray-700">Technologies Mastered</div>
+              <div className="text-indigo-600 font-bold text-4xl mb-2">5+</div>
+              <div className="text-gray-700">{t('experience.tech')}</div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

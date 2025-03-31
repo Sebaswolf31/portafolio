@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 // Import components
 import Navbar from './components/Navbar';
@@ -11,9 +12,12 @@ import ProjectsSection from './components/ProjectsSection';
 import ExperienceSection from './components/ExperienceSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import CursorGlow from './components/CursorGlow';
+import { useLanguage } from './context/LanguageContext';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('hero');
+  const { t } = useLanguage();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -39,6 +43,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
+      <CursorGlow />
       <Navbar activeSection={activeSection} />
       <HeroSection />
       <AboutSection />
@@ -49,15 +54,19 @@ export default function Home() {
       <Footer />
       
       {/* Scroll to top button */}
-      <button
+      <motion.button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-6 right-6 p-3 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition-colors focus:outline-none z-50"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-6 right-6 p-3 rounded-full bg-indigo-600 text-white shadow-lg hover:bg-indigo-700 transition-colors focus:outline-none z-50"
         aria-label="Scroll to top"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
         </svg>
-      </button>
+      </motion.button>
     </main>
   );
 }
