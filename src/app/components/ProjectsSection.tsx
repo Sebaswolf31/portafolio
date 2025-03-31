@@ -4,7 +4,16 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import SectionHeader from './shared/SectionHeader';
 
-const ProjectCard = ({ title, description, image, tags, link, linkText }) => {
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  link: string;
+  linkText: string;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, tags, link, linkText }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}

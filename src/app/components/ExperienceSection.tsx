@@ -4,7 +4,17 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import SectionHeader from './shared/SectionHeader';
 
-const TimelineItem = ({ title, date, description, icon, technologies, quote, align = 'left' }) => {
+interface TimelineItemProps {
+  title: string;
+  date: string;
+  description: string;
+  icon: React.ReactNode;
+  technologies?: string[];
+  quote?: string;
+  align?: 'left' | 'right';
+}
+
+const TimelineItem: React.FC<TimelineItemProps> = ({ title, date, description, icon, technologies, quote, align = 'left' }) => {
   return (
     <motion.div variants={{
       hidden: { opacity: 0, y: 20 },

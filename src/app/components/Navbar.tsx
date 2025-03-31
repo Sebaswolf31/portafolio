@@ -3,7 +3,12 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 
-const Navbar = ({ activeSection, scrollY }) => {
+interface NavbarProps {
+  activeSection: string;
+  scrollY: number;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollY }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { language, toggleLanguage, t } = useLanguage();
 
