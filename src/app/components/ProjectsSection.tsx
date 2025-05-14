@@ -204,7 +204,7 @@ const ProjectsSection: React.FC = () => {
         'PostgreSQL',
         'Nestjs',
         'JWT',
-        'ThunderClinet',
+        'ThunderClient',
       ],
       links: {
         code: 'https://github.com/Sebaswolf31/e-commerce',
