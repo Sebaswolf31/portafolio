@@ -73,9 +73,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
 
       <div className='p-6'>
-        <p className='text-zinc-400 text-sm mb-6 line-clamp-3 text-black '>
-          {description}
-        </p>
+        <p className=' text-black  text-sm mb-6 line-clamp-3'>{description}</p>
 
         <div className='flex flex-wrap gap-3'>
           {links.code && (
@@ -182,11 +180,13 @@ const ProjectsSection: React.FC = () => {
       description: t('projects.anomaly.desc'),
       image: '/gym.gif',
       technologies: [
-        'Python',
-        'Kubernetes',
-        'Prometheus',
-        'Flask',
-        'Scikit-learn',
+        'Nextjs',
+        'JWT',
+        'React',
+        'Tailwind',
+        'TypeScript',
+        'Nodejs',
+        'PostgreSQL',
       ],
       links: {
         code: 'https://github.com/Sebaswolf31/ExtremeGym',
@@ -199,7 +199,13 @@ const ProjectsSection: React.FC = () => {
       title: t('projects.docmind.title'),
       description: t('projects.docmind.desc'),
       image: '/ecommerce.png',
-      technologies: ['Python', 'OpenAI', 'Anthropic', 'Azure', 'OCR'],
+      technologies: [
+        'TypeScript',
+        'PostgreSQL',
+        'Nestjs',
+        'JWT',
+        'ThunderClinet',
+      ],
       links: {
         code: 'https://github.com/Sebaswolf31/e-commerce',
       },
@@ -209,7 +215,7 @@ const ProjectsSection: React.FC = () => {
       title: t('projects.timeseries.title'),
       description: t('projects.timeseries.desc'),
       image: '/veterinaria.png',
-      technologies: ['Python', 'TensorFlow', 'LSTM', 'Transformers', 'Pandas'],
+      technologies: ['React', 'Javascript', 'Express', 'Nodejs', 'PosgreSQL'],
       links: {
         code: 'https://github.com/Sebaswolf31/VeterinariaProyecto',
       },
@@ -219,7 +225,7 @@ const ProjectsSection: React.FC = () => {
       title: t('projects.nlp.title'),
       description: t('projects.nlp.desc'),
       image: '/peliculas.jpg',
-      technologies: ['Python', 'RAG', 'LangChain', 'SQL', 'OpenAI'],
+      technologies: ['Express', 'CSS', 'HTML', 'MongoDB', 'Javascript'],
       links: {
         code: 'https://github.com/Sebaswolf31/Avanzando',
       },
