@@ -77,9 +77,7 @@ To customize this portfolio for your own use:
 
 ## Credits
 
-- Design and Development: Markel Ramiro
-- Icons: [Heroicons](https://heroicons.com)
-- Fonts: Google Fonts (Montserrat, Space Grotesk)
+- Design and Development: Juan Sebastian cardona
 
 ## License
 

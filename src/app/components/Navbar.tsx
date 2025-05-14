@@ -30,22 +30,24 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
   ];
 
   return (
-    <nav 
+    <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/90 backdrop-blur-md py-3 shadow-sm' 
+        isScrolled
+          ? 'bg-white/90 backdrop-blur-md py-3 shadow-sm'
           : 'bg-transparent py-5'
       }`}
     >
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+      <div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='flex items-center justify-between'>
           {/* Logo */}
-          <a href="#hero" className="flex items-center">
-            <span className="text-xl font-space font-bold text-blue-600">Markel Ramiro</span>
+          <a href='#hero' className='flex items-center'>
+            <span className='text-xl font-space font-bold text-blue-600'>
+              Juan Sebastian Cardona
+            </span>
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className='hidden md:flex items-center space-x-8'>
             {navLinks.map((link) => (
               <a
                 key={link.id}
@@ -56,49 +58,75 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               >
                 {link.label}
                 {activeSection === link.id && (
-                  <div className="h-0.5 w-full bg-blue-600 mt-1 rounded-full"></div>
+                  <div className='h-0.5 w-full bg-blue-600 mt-1 rounded-full'></div>
                 )}
               </a>
             ))}
-            
-            <div className="pl-4 border-l border-gray-200">
+
+            <div className='pl-4 border-l border-gray-200'>
               <a
-                href="/CV-markel-ramiro.pdf"
+                href='/CV-sebastian-cardona.pdf'
                 download
-                className="btn-primary text-sm py-2"
+                className='btn-primary text-sm py-2'
               >
                 {t('nav.cv')}
               </a>
             </div>
-            
-            <button 
-              onClick={toggleLanguage} 
-              className="flex items-center px-2 py-1 border border-gray-300 rounded-md hover:border-blue-500 hover:text-blue-600 transition-colors"
+
+            <button
+              onClick={toggleLanguage}
+              className='flex items-center px-2 py-1 border border-gray-300 rounded-md hover:border-blue-500 hover:text-blue-600 transition-colors'
             >
-              <span className="text-sm font-medium">{language === 'es' ? 'ES' : 'EN'}</span>
+              <span className='text-sm font-medium'>
+                {language === 'es' ? 'ES' : 'EN'}
+              </span>
             </button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className='md:hidden flex items-center space-x-4'>
             <button
               onClick={toggleLanguage}
-              className="p-1 text-gray-700 hover:text-blue-600 transition-colors"
+              className='p-1 text-gray-700 hover:text-blue-600 transition-colors'
             >
-              <span className="text-sm font-medium">{language === 'es' ? 'ES' : 'EN'}</span>
+              <span className='text-sm font-medium'>
+                {language === 'es' ? 'ES' : 'EN'}
+              </span>
             </button>
-            
+
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none"
+              className='text-gray-700 hover:text-blue-600 focus:outline-none'
             >
               {isMobileMenuOpen ? (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                <svg
+                  className='w-6 h-6'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
+                    d='M6 18L18 6M6 6l12 12'
+                  ></path>
                 </svg>
               ) : (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                <svg
+                  className='w-6 h-6'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
+                    d='M4 6h16M4 12h16m-7 6h7'
+                  ></path>
                 </svg>
               )}
             </button>
@@ -107,14 +135,16 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white rounded-lg shadow-lg mt-4 p-4 absolute left-4 right-4 z-50">
-            <div className="flex flex-col space-y-4">
+          <div className='md:hidden bg-white rounded-lg shadow-lg mt-4 p-4 absolute left-4 right-4 z-50'>
+            <div className='flex flex-col space-y-4'>
               {navLinks.map((link) => (
                 <a
                   key={link.id}
                   href={`#${link.id}`}
                   className={`text-base font-medium transition-colors hover:text-blue-600 ${
-                    activeSection === link.id ? 'text-blue-600' : 'text-gray-700'
+                    activeSection === link.id
+                      ? 'text-blue-600'
+                      : 'text-gray-700'
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -122,9 +152,9 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                 </a>
               ))}
               <a
-                href="/CV-markel-ramiro.pdf"
+                href='/CV-sebastian-cardona.pdf'
                 download
-                className="btn-primary text-center"
+                className='btn-primary text-center'
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {t('nav.cv')}

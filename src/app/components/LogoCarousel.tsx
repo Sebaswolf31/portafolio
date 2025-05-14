@@ -4,11 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
 const technologies = [
-  {
-    name: 'Kubernetes',
-    lightLogo: '/kubernetes.svg',
-    darkLogo: '/kubernetes.svg',
-  },
+  
   {
     name: 'Docker',
     lightLogo: '/docker.svg',
